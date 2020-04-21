@@ -1,0 +1,19 @@
+{
+  "name": "backend-project-lvl1",
+  "version": "1.0.0",
+  "description": "",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "gh:alex-popov-tech/backend-project-lvl1"
+  },
+  "author": "",
+  "license": "ISC"
+}
