@@ -1,5 +1,5 @@
 import readline from 'readline-sync';
-import { playIsEvenGame, playCalcGame } from './games.js';
+import { playIsEvenGame, playCalcGame, playGcdGame } from './games.js';
 
 const greet = () => {
   console.log('Welcome to the Brain Games!');
@@ -18,4 +18,5 @@ export {
   greetPlayer,
   playIsEvenGame,
   playCalcGame,
+  playGcdGame,
 };
