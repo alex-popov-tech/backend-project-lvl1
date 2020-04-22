@@ -1,30 +1,12 @@
 import readline from 'readline-sync';
-import {
-  playIsEvenGame,
-  playCalcGame,
-  playGcdGame,
-  playProgressionGame,
-  playIsPrimeGame,
-} from './games.js';
-
-const greet = () => {
-  console.log('Welcome to the Brain Games!');
-};
-
-const askName = () => readline.question('May I have your name? ');
-
-const greetPlayer = (name) => {
-  console.log(`Hello, ${name}!`);
-};
-
 
 export {
-  greet,
-  askName,
-  greetPlayer,
-  playIsEvenGame,
   playCalcGame,
   playGcdGame,
-  playProgressionGame,
+  playIsEvenGame,
   playIsPrimeGame,
-};
+  playProgressionGame,
+} from './games/index.js';
+export const greet = () => console.log('Welcome to the Brain Games!');
+export const askName = () => readline.question('May I have your name? ');
+export const greetPlayer = (name) => console.log(`Hello, ${name}!`);
