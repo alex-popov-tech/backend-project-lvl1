@@ -14,3 +14,8 @@
 
 [![Win](https://asciinema.org/a/E203CkxKun5HCmvvKCP97b1KO.png)](https://asciinema.org/a/E203CkxKun5HCmvvKCP97b1KO)
 [![Fail](https://asciinema.org/a/59n3Nqr0PXeP4kjPR32eJpKf3.png)](https://asciinema.org/a/59n3Nqr0PXeP4kjPR32eJpKf3)
+
+# Is Prime
+
+[![Win](https://asciinema.org/a/gxmZkleczLxMRVDkHDosXf9YO.png)](https://asciinema.org/a/gxmZkleczLxMRVDkHDosXf9YO)
+[![Fail](https://asciinema.org/a/rxAehnpQNbRPJRg7bXCOFGHw5.png)](https://asciinema.org/a/rxAehnpQNbRPJRg7bXCOFGHw5)

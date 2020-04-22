@@ -109,9 +109,35 @@ const playProgressionGame = (playerName) => play({
   showCongratulations: () => console.log(`Congratulations, ${playerName}!`),
 });
 
+const playIsPrimeGame = (playerName) => play({
+  showRules: () => console.log('Answer "yes" if given number is prime. Otherwise answer "no".'),
+  playRound: () => {
+    const numberToCheck = Math.round(Math.random() * 100);
+    const isPrime = (num) => {
+      for (let i = 2; i < num; i += 1) {
+        if (num % i === 0) {
+          return false;
+        }
+      }
+      return num > 1;
+    };
+
+    console.log(`Question: ${numberToCheck}`);
+    const answer = readline.question('Your answer: ');
+
+    if (isPrime(numberToCheck) ? (answer === 'yes') : (answer === 'no')) {
+      console.log('Correct!');
+      return true;
+    }
+    return false;
+  },
+  showCongratulations: () => console.log(`Congratulations, ${playerName}!`),
+});
+
 export {
   playIsEvenGame,
   playCalcGame,
   playGcdGame,
   playProgressionGame,
+  playIsPrimeGame,
 };
