@@ -9,3 +9,8 @@
 
 [![Win](https://asciinema.org/a/9gOruObiedPEpdH8JjmAqfSZs.png)](https://asciinema.org/a/9gOruObiedPEpdH8JjmAqfSZs)
 [![Fail](https://asciinema.org/a/WSX5nAn34iENpPjPtBgZlIqCa.png)](https://asciinema.org/a/WSX5nAn34iENpPjPtBgZlIqCa)
+
+# Progression
+
+[![Win](https://asciinema.org/a/E203CkxKun5HCmvvKCP97b1KO.png)](https://asciinema.org/a/E203CkxKun5HCmvvKCP97b1KO)
+[![Fail](https://asciinema.org/a/59n3Nqr0PXeP4kjPR32eJpKf3.png)](https://asciinema.org/a/59n3Nqr0PXeP4kjPR32eJpKf3)
