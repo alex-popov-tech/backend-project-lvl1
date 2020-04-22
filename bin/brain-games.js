@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
-import func from '../src/index';
+import { greet, askName, greetPlayer } from '../src/index.js';
 
-func();
+greet();
+const name = askName();
+greetPlayer(name);
