@@ -1,4 +1,4 @@
-name: Alex's Popov first project
+name: CI
 on:
   push:
     branches: [ master ]
