@@ -1,10 +1,11 @@
 import readline from 'readline-sync';
 
+const DEFAULT_ROUNDS_COUNT = 3;
 const say = (text) => console.log(text);
 const ask = (text) => readline.question(text);
 
 export default ({
-  roundsCount = 3,
+  roundsCount = DEFAULT_ROUNDS_COUNT,
   description = '',
   roundData = () => { },
   roundError = () => { },
