@@ -1,7 +1,9 @@
 import createGameWith from './main.js';
 
+const description = 'What number is missing in the progression?';
+
 export default () => createGameWith({
-  description: 'What number is missing in the progression?',
+  description,
   roundData: () => {
     const DEFAULT_PROGRESSION_LENGTH = 10;
     const seed = Math.round(Math.random() * (DEFAULT_PROGRESSION_LENGTH - 1));

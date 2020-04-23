@@ -15,8 +15,10 @@ const calculate = (firstOperand, secondOperand, operator) => {
   return firstOperand / secondOperand;
 };
 
+const description = 'What is the result of the expression?';
+
 export default () => createGameWith({
-  description: 'What is the result of the expression?',
+  description,
   roundData: () => {
     const [firstOperand, secondOperand] = [randomPositiveInteger(), randomPositiveInteger()];
     const operator = randomItemOf(['-', '+', '*']);
