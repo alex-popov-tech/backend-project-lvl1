@@ -1,9 +1,8 @@
-import readline from 'readline-sync';
 import createGameWith from './main.js';
 
-export default (playerName) => createGameWith({
-  showRules: () => console.log('What number is missing in the progression?'),
-  playRound: () => {
+export default () => createGameWith({
+  rules: 'What number is missing in the progression?',
+  roundData: () => {
     const DEFAULT_PROGRESSION_LENGTH = 10;
     const seed = Math.round(Math.random() * (DEFAULT_PROGRESSION_LENGTH - 1));
     const progression = new Array(DEFAULT_PROGRESSION_LENGTH)
@@ -12,15 +11,6 @@ export default (playerName) => createGameWith({
       .map((it) => it * seed);
     const missingElement = progression[seed];
     progression[seed] = '..';
-
-    console.log(`Question: ${progression.join(' ')}`);
-    const answer = readline.question('Your answer: ');
-
-    if (answer === String(missingElement)) {
-      console.log('Correct!');
-      return true;
-    }
-    return false;
+    return [(`Question: ${progression.join(' ')} `), String(missingElement)];
   },
-  showCongratulations: () => console.log(`Congratulations, ${playerName}!`),
 });

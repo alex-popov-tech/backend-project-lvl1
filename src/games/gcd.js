@@ -1,4 +1,3 @@
-import readline from 'readline-sync';
 import createGameWith from './main.js';
 
 const gcdOf = (first, second) => {
@@ -10,20 +9,13 @@ const gcdOf = (first, second) => {
   return x;
 };
 
-export default (playerName) => createGameWith({
-  showRules: () => console.log('Find the greatest common divisor of given numbers.'),
-  playRound: () => {
-    const [first, second] = [Math.round(Math.random() * 100), Math.round(Math.random() * 100)];
-    const gcd = gcdOf(first, second);
+const randomPositiveInteger = (to = 100) => Math.round(Math.random() * to);
 
-    console.log(`Question: ${first} ${second}`);
-    const answer = readline.question('Your answer: ');
-
-    if (answer === String(gcd)) {
-      console.log('Correct!');
-      return true;
-    }
-    return false;
+export default () => createGameWith({
+  rules: 'Find the greatest common divisor of given numbers.',
+  roundData: () => {
+    const [firstNumber, secondNumber] = [randomPositiveInteger(), randomPositiveInteger()];
+    const gcd = gcdOf(firstNumber, secondNumber);
+    return [`Question: ${firstNumber} ${secondNumber} `, String(gcd)];
   },
-  showCongratulations: () => console.log(`Congratulations, ${playerName}!`),
 });

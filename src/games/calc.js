@@ -1,26 +1,26 @@
-import readline from 'readline-sync';
 import createGameWith from './main.js';
 
-export default (playerName) => createGameWith({
-  showRules: () => console.log('What is the result of the expression?'),
-  playRound: () => {
-    const [first, second] = [Math.round(Math.random() * 100), Math.round(Math.random() * 100)];
-    const operators = ['-', '+', '*'];
-    const operator = operators[first % operators.length];
-    const expression = `${first} ${operator} ${second}`;
-    // eslint-disable-next-line no-eval
-    const correctAnswer = eval(expression);
+const randomPositiveInteger = (to = 100) => Math.round(Math.random() * to);
+const randomItemOf = (arr) => arr[randomPositiveInteger() % arr.length];
+const calculate = (firstOperand, secondOperand, operator) => {
+  if (operator === '+') {
+    return firstOperand + secondOperand;
+  }
+  if (operator === '-') {
+    return firstOperand - secondOperand;
+  }
+  if (operator === '*') {
+    return firstOperand * secondOperand;
+  }
+  return firstOperand / secondOperand;
+};
 
-    console.log(`Question: ${expression}`);
-    const answer = readline.question('Your answer: ');
-
-    if (answer === String(correctAnswer)) {
-      console.log('Correct!');
-      return true;
-    }
-    console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}"`);
-    console.log(`Let's try again, ${playerName}!`);
-    return false;
+export default () => createGameWith({
+  rules: 'What is the result of the expression?',
+  roundData: () => {
+    const [firstOperand, secondOperand] = [randomPositiveInteger(), randomPositiveInteger()];
+    const operator = randomItemOf(['-', '+', '*']);
+    return [`Question: ${firstOperand} ${operator} ${secondOperand} `, String(calculate(firstOperand, secondOperand, operator))];
   },
-  showCongratulations: () => console.log(`Congratulations, ${playerName}!`),
+  roundError: (playerName, correctAnswer, playerAnswer) => `"${playerAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}"\nLet's try again ${playerName}!`,
 });
