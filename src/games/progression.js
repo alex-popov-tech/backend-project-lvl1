@@ -13,6 +13,6 @@ export default () => createGameWith({
       .map((it) => it * seed);
     const missingElement = progression[seed];
     progression[seed] = '..';
-    return [(`Question: ${progression.join(' ')} `), String(missingElement)];
+    return [progression.join(' '), String(missingElement)];
   },
 });

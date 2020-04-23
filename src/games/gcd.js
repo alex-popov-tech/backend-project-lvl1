@@ -18,6 +18,6 @@ export default () => createGameWith({
   roundData: () => {
     const [firstNumber, secondNumber] = [randomPositiveInteger(), randomPositiveInteger()];
     const gcd = gcdOf(firstNumber, secondNumber);
-    return [`Question: ${firstNumber} ${secondNumber} `, String(gcd)];
+    return [`${firstNumber} ${secondNumber}`, String(gcd)];
   },
 });

@@ -15,6 +15,6 @@ export default () => createGameWith({
   description,
   roundData: () => {
     const numberToCheck = Math.round(Math.random() * 100);
-    return [`Question: ${numberToCheck} `, isPrime(numberToCheck) ? 'yes' : 'no'];
+    return [numberToCheck, isPrime(numberToCheck) ? 'yes' : 'no'];
   },
 });

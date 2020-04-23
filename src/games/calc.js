@@ -22,7 +22,7 @@ export default () => createGameWith({
   roundData: () => {
     const [firstOperand, secondOperand] = [randomPositiveInteger(), randomPositiveInteger()];
     const operator = randomItemOf(['-', '+', '*']);
-    return [`Question: ${firstOperand} ${operator} ${secondOperand} `, String(calculate(firstOperand, secondOperand, operator))];
+    return [`${firstOperand} ${operator} ${secondOperand}`, String(calculate(firstOperand, secondOperand, operator))];
   },
   roundError: (playerName, correctAnswer, playerAnswer) => `"${playerAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}"\nLet's try again ${playerName}!`,
 });

@@ -15,7 +15,7 @@ export default ({
   say(description);
   for (let i = 0; i < roundsCount; i += 1) {
     const [question, correctAnswer] = roundData();
-    const playerAnswer = ask(question);
+    const playerAnswer = ask(`Question: ${question} `);
     if (playerAnswer !== correctAnswer) {
       say(roundError(name, correctAnswer, playerAnswer));
       return;
