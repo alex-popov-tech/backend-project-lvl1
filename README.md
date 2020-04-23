@@ -1,4 +1,4 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/db22fd65551c41eb59dc/maintainability)](https://codeclimate.com/github/alex-popov-tech/backend-project-lvl1/maintainability)
 [![Actions Status](https://github.com/alex-popov-tech/backend-project-lvl1/workflows/CI/badge.svg)](https://github.com/alex-popov-tech/backend-project-lvl1/actions)
 
 # Calc
