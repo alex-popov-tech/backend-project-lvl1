@@ -12,7 +12,7 @@ const calculate = (firstOperand, secondOperand, operator) => {
   if (operator === '*') {
     return firstOperand * secondOperand;
   }
-  return firstOperand / secondOperand;
+  throw new Error(`Cannot calculate expression with operand "${operator}"`);
 };
 
 const description = 'What is the result of the expression?';
