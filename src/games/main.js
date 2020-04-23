@@ -5,14 +5,14 @@ const ask = (text) => readline.question(text);
 
 export default ({
   roundsCount = 3,
-  rules = '',
+  description = '',
   roundData = () => { },
   roundError = () => { },
 } = {}) => {
   say('Welcome to the Brain Games!');
   const name = ask('May I have your name? ');
   say(`Hello, ${name}!`);
-  say(rules);
+  say(description);
   for (let i = 0; i < roundsCount; i += 1) {
     const [question, correctAnswer] = roundData();
     const playerAnswer = ask(question);

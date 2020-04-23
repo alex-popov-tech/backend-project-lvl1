@@ -12,7 +12,7 @@ const gcdOf = (first, second) => {
 const randomPositiveInteger = (to = 100) => Math.round(Math.random() * to);
 
 export default () => createGameWith({
-  rules: 'Find the greatest common divisor of given numbers.',
+  description: 'Find the greatest common divisor of given numbers.',
   roundData: () => {
     const [firstNumber, secondNumber] = [randomPositiveInteger(), randomPositiveInteger()];
     const gcd = gcdOf(firstNumber, secondNumber);

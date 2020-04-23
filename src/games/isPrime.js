@@ -10,7 +10,7 @@ const isPrime = (num) => {
 };
 
 export default () => createGameWith({
-  rules: 'Answer "yes" if given number is prime. Otherwise answer "no".',
+  description: 'Answer "yes" if given number is prime. Otherwise answer "no".',
   roundData: () => {
     const numberToCheck = Math.round(Math.random() * 100);
     return [`Question: ${numberToCheck} `, isPrime(numberToCheck) ? 'yes' : 'no'];
