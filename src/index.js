@@ -4,5 +4,4 @@ export {
   playIsEvenGame,
   playIsPrimeGame,
   playProgressionGame,
-  playGame,
 } from './games/index.js';

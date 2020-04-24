@@ -24,5 +24,4 @@ export default () => createGameWith({
     const operator = randomItemOf(['-', '+', '*']);
     return [`${firstOperand} ${operator} ${secondOperand}`, String(calculate(firstOperand, secondOperand, operator))];
   },
-  roundError: (playerName, correctAnswer, playerAnswer) => `"${playerAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}"\nLet's try again ${playerName}!`,
 });

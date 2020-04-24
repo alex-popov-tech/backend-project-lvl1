@@ -6,9 +6,8 @@ const ask = (text) => readline.question(text);
 
 export default ({
   roundsCount = DEFAULT_ROUNDS_COUNT,
-  description = '',
-  roundData = () => { },
-  roundError = () => { },
+  description,
+  roundData,
 } = {}) => {
   say('Welcome to the Brain Games!');
   const name = ask('May I have your name? ');
@@ -18,12 +17,10 @@ export default ({
     const [question, correctAnswer] = roundData();
     const playerAnswer = ask(`Question: ${question} `);
     if (playerAnswer !== correctAnswer) {
-      say(roundError(name, correctAnswer, playerAnswer));
+      say(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}"\nLet's try again ${name}!`);
       return;
     }
     say('Correct!');
-    if (i === roundsCount - 1) {
-      say(`Congratulations, ${name}!`);
-    }
   }
+  say(`Congratulations, ${name}!`);
 };
