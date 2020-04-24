@@ -13,5 +13,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '13.x'
-      - name: Linter
+      - name: Install dependencies
+        run: npm ci
+      - name: Verification
         run: make lint
