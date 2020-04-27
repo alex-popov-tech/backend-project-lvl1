@@ -7,14 +7,14 @@ const ask = (text) => readline.question(text);
 export default ({
   roundsCount = DEFAULT_ROUNDS_COUNT,
   description,
-  roundData,
+  generateRoundData,
 } = {}) => {
   say('Welcome to the Brain Games!');
   const name = ask('May I have your name? ');
   say(`Hello, ${name}!`);
   say(description);
   for (let i = 0; i < roundsCount; i += 1) {
-    const [question, correctAnswer] = roundData();
+    const [question, correctAnswer] = generateRoundData();
     const playerAnswer = ask(`Question: ${question} `);
     if (playerAnswer !== correctAnswer) {
       say(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}"\nLet's try again ${name}!`);
