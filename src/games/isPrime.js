@@ -1,20 +1,24 @@
-import createGameWith from './main.js';
+import { randomPositiveInteger, generateGameWith } from '../engine/main.js';
 
 const isPrime = (num) => {
-  for (let i = 2; i < (num / 2); i += 1) {
+  if (num === 1) {
+    return true;
+  }
+  for (let i = 2; i < Math.sqrt(num); i += 1) {
     if (num % i === 0) {
       return false;
     }
   }
-  return num > 1;
+  return true;
 };
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-export default () => createGameWith({
+export default () => generateGameWith({
   description,
   generateRoundData: () => {
-    const numberToCheck = Math.round(Math.random() * 100);
-    return [numberToCheck, isPrime(numberToCheck) ? 'yes' : 'no'];
+    const question = randomPositiveInteger();
+    const answer = isPrime(question) ? 'yes' : 'no';
+    return [question, answer];
   },
 });

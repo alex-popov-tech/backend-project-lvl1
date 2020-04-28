@@ -1,7 +1,7 @@
-import createGameWith from './main.js';
+import { randomPositiveInteger, generateGameWith } from '../engine/main.js';
 
-const randomPositiveInteger = (to = 100) => Math.round(Math.random() * to);
 const randomItemOf = (arr) => arr[randomPositiveInteger() % arr.length];
+
 const calculate = (firstOperand, secondOperand, operator) => {
   switch (operator) {
     case '+':
@@ -17,11 +17,13 @@ const calculate = (firstOperand, secondOperand, operator) => {
 
 const description = 'What is the result of the expression?';
 
-export default () => createGameWith({
+export default () => generateGameWith({
   description,
   generateRoundData: () => {
     const [firstOperand, secondOperand] = [randomPositiveInteger(), randomPositiveInteger()];
     const operator = randomItemOf(['-', '+', '*']);
-    return [`${firstOperand} ${operator} ${secondOperand}`, String(calculate(firstOperand, secondOperand, operator))];
+    const question = `${firstOperand} ${operator} ${secondOperand}`;
+    const answer = String(calculate(firstOperand, secondOperand, operator));
+    return [question, answer];
   },
 });

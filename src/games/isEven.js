@@ -1,12 +1,13 @@
-import createGameWith from './main.js';
+import { randomPositiveInteger, generateGameWith } from '../engine/main.js';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
+const isEven = (num) => num % 2 === 0;
 
-export default () => createGameWith({
+export default () => generateGameWith({
   description,
   generateRoundData: () => {
-    const question = Math.round(Math.random() * 100);
-    const isEven = question % 2 === 0;
-    return [question, isEven ? 'yes' : 'no'];
+    const question = randomPositiveInteger();
+    const answer = isEven(question) ? 'yes' : 'no';
+    return [question, answer];
   },
 });

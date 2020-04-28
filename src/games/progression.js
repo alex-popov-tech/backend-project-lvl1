@@ -1,18 +1,21 @@
-import createGameWith from './main.js';
+import { randomPositiveInteger, generateGameWith } from '../engine/main.js';
 
 const description = 'What number is missing in the progression?';
 
-export default () => createGameWith({
+export default () => generateGameWith({
   description,
   generateRoundData: () => {
     const DEFAULT_PROGRESSION_LENGTH = 10;
-    const seed = Math.round(Math.random() * (DEFAULT_PROGRESSION_LENGTH - 1));
+    const seed = randomPositiveInteger(DEFAULT_PROGRESSION_LENGTH - 1);
     const progression = new Array(DEFAULT_PROGRESSION_LENGTH)
       .fill(null)
       .map((_, i) => i + 1)
       .map((it) => it * seed);
     const missingElement = progression[seed];
     progression[seed] = '..';
-    return [progression.join(' '), String(missingElement)];
+
+    const question = progression.join(' ');
+    const answer = String(missingElement);
+    return [question, answer];
   },
 });

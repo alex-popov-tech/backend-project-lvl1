@@ -4,11 +4,12 @@ const DEFAULT_ROUNDS_COUNT = 3;
 const say = (text) => console.log(text);
 const ask = (text) => readline.question(text);
 
-export default ({
+export const randomPositiveInteger = (to = 100) => Math.round(Math.random() * to);
+export const generateGameWith = ({
   roundsCount = DEFAULT_ROUNDS_COUNT,
   description,
   generateRoundData,
-} = {}) => {
+}) => {
   say('Welcome to the Brain Games!');
   const name = ask('May I have your name? ');
   say(`Hello, ${name}!`);
@@ -17,7 +18,8 @@ export default ({
     const [question, correctAnswer] = generateRoundData();
     const playerAnswer = ask(`Question: ${question} `);
     if (playerAnswer !== correctAnswer) {
-      say(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}"\nLet's try again ${name}!`);
+      say(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}"`);
+      say(`Let's try again ${name}!`);
       return;
     }
     say('Correct!');

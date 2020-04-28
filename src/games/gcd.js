@@ -1,4 +1,4 @@
-import createGameWith from './main.js';
+import { randomPositiveInteger, generateGameWith } from '../engine/main.js';
 
 const gcd = (first, second) => {
   let x = Math.abs(first);
@@ -9,15 +9,14 @@ const gcd = (first, second) => {
   return x;
 };
 
-const randomPositiveInteger = (to = 100) => Math.round(Math.random() * to);
-
 const description = 'Find the greatest common divisor of given numbers.';
 
-export default () => createGameWith({
+export default () => generateGameWith({
   description,
   generateRoundData: () => {
     const [firstNumber, secondNumber] = [randomPositiveInteger(), randomPositiveInteger()];
+    const question = `${firstNumber} ${secondNumber}`;
     const answer = String(gcd(firstNumber, secondNumber));
-    return [`${firstNumber} ${secondNumber}`, answer];
+    return [question, answer];
   },
 });
