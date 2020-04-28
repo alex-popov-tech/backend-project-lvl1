@@ -1,4 +1,5 @@
-import { randomPositiveInteger, generateGameWith } from '../engine/main.js';
+import generateGameWith from '../engine/index.js';
+import randomPositiveInteger from '../utils.js';
 
 const gcd = (first, second) => {
   let x = Math.abs(first);

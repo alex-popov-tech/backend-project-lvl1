@@ -4,8 +4,7 @@ const DEFAULT_ROUNDS_COUNT = 3;
 const say = (text) => console.log(text);
 const ask = (text) => readline.question(text);
 
-export const randomPositiveInteger = (to = 100) => Math.round(Math.random() * to);
-export const generateGameWith = ({
+export default ({
   roundsCount = DEFAULT_ROUNDS_COUNT,
   description,
   generateRoundData,
@@ -18,7 +17,7 @@ export const generateGameWith = ({
     const [question, correctAnswer] = generateRoundData();
     const playerAnswer = ask(`Question: ${question} `);
     if (playerAnswer !== correctAnswer) {
-      say(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}"`);
+      say(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
       say(`Let's try again ${name}!`);
       return;
     }

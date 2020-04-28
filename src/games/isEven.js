@@ -1,4 +1,5 @@
-import { randomPositiveInteger, generateGameWith } from '../engine/main.js';
+import generateGameWith from '../engine/index.js';
+import randomPositiveInteger from '../utils.js';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 const isEven = (num) => num % 2 === 0;

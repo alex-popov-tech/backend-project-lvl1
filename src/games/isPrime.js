@@ -1,4 +1,5 @@
-import { randomPositiveInteger, generateGameWith } from '../engine/main.js';
+import generateGameWith from '../engine/index.js';
+import randomPositiveInteger from '../utils.js';
 
 const isPrime = (num) => {
   if (num < 2) {
